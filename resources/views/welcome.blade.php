@@ -1,133 +1,656 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
-
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
+@include('pages.header')
+        <!--=====================================-->
+        <!--=       Hero Banner Area Start      =-->
+        <!--=====================================-->
+        <div class="hero-banner hero-style-3 bg-image">
+            <div class="swiper university-activator">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img style="height: 250px;" data-transform-origin='center center' data-src="{{ asset('front/assets/images/bg/4.png') }}" class="swiper-lazy" alt="image">
+                        <div class="thumbnail-bg-content">
+                            <div class="container edublink-animated-shape">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="banner-content">
+                                            <span class="subtitle" data-sal="slide-up" data-sal-duration="1000">Welcome to Priscor Academy</span>
+                                            <h1 class="title" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">The Best Place to Learn Digital Skills</h1>
+                                            <p data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">We are dedicatesd to give student the notch of ICT Skills in relevence to global Needs.</p>
+                                            <div class="banner-btn" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                                                <a href="{{ url('courses') }}" class="edu-btn btn-secondary">Find courses <i class="icon-4"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
                             </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img style="height: 250px;" data-transform-origin='center center' data-src="{{ asset('front/assets/images/bg/ict2.jpg') }}" class="swiper-lazy" alt="image">
+                        <div class="thumbnail-bg-content">
+                            <div class="container edublink-animated-shape">
+                                <div class="row">
+                                    <div class="col-7">
+                                    <div class="banner-content">
+                                            <span class="subtitle" data-sal="slide-up" data-sal-duration="1000">Welcome to Priscor Academy</span>
+                                            <h1 class="title" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">The Best Place to Learn Digital Skills</h1>
+                                            <p data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">We are dedicatesd to give student the notch of ICT Skills in relevence to global Needs.</p>
+                                            <div class="banner-btn" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                                                <a href="{{ url('courses') }}" class="edu-btn btn-secondary">Find courses <i class="icon-4"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
                             </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img style="height: 250px;" data-transform-origin='center center' data-src="{{ asset('front/assets/images/bg/1.png') }}" class="swiper-lazy" alt="image">
+                        <div class="thumbnail-bg-content">
+                            <div class="container edublink-animated-shape">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="banner-content">
+                                            <span class="subtitle" data-sal="slide-up" data-sal-duration="1000">Welcome to Priscor Academy</span>
+                                            <h1 class="title" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">The Best Place to Learn Digital Skills</h1>
+                                            <p data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">We are dedicatesd to give student the notch of ICT Skills in relevence to global Needs.</p>
+                                            <div class="banner-btn" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                                                <a href="{{ url('courses') }}" class="edu-btn btn-secondary">Find courses <i class="icon-4"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm sm:text-left">
-                        &nbsp;
+                <div class="hero-slider-bg-controls">
+                    <div class="swiper-slide-controls slide-prev">
+                        <i class="icon-west"></i>
                     </div>
-
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    <div class="swiper-slide-controls slide-next">
+                        <i class="icon-east"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="shape-group">
+                <li class="shape-1 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                    <img data-depth="2" src="front/assets/images/others/shape-10.png" alt="Shape">
+                </li>
+                <li class="shape-2 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                    <img data-depth="-3" src="front/assets/images/others/shape-11.png" alt="Shape">
+                </li>
+                <li class="shape-3">
+                    <img src="front/assets/images/others/shape-25.png" alt="Shape">
+                </li>
+            </ul>
+        </div>
+        <!--=====================================-->
+        <!--=       Features Area Start      	=-->
+        <!--=====================================-->
+        <!-- Start Categories Area  -->
+        <div class="features-area-3">
+            <div class="container">
+                <div class="features-grid-wrap">
+                    <div class="features-box features-style-3 color-primary-style edublink-svg-animate">
+                        <div class="icon">
+                            <img class="svgInject" src="front/assets/images/animated-svg-icons/scholarship-facility.svg" alt="animated icon">
+                            <!-- <i class="icon-34"></i> -->
+                        </div>
+                        <div class="content">
+                            <h4 class="title">Serene Environment</h4>
+                            <p>Conducive Environment that are noice free which enhances effective learning</p>
+                        </div>
+                    </div>
+                    <div class="features-box features-style-3 color-secondary-style edublink-svg-animate">
+                        <div class="icon">
+                            <img class="svgInject" src="front/assets/images/animated-svg-icons/skilled-lecturers.svg" alt="animated icon">
+                        </div>
+                        <div class="content">
+                            <h4 class="title">Skilled Instructors</h4>
+                            <p>Instructors that are well equip with modern Technologies.</p>
+                        </div>
+                    </div>
+                    <div class="features-box features-style-3 color-extra02-style edublink-svg-animate">
+                        <div class="icon">
+                            <img class="svgInject" src="front/assets/images/animated-svg-icons/book-library.svg" alt="animated icon">
+                            <!-- <i class="icon-36"></i> -->
+                        </div>
+                        <div class="content">
+                            <h4 class="title">Close Attention to Students</h4>
+                            <p>We pay close attention to our student needs</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <!-- End Categories Area  -->
+        <!--=====================================-->
+        <!--=       About Area Start      		=-->
+        <!--=====================================-->
+        <div class="edu-about-area about-style-3">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+                        <div class="about-content">
+                            <div class="section-title section-left">
+                                <span class="pre-title">About Us</span>
+                                <h2 class="title">We Provide Best <span class="color-primary">Digital</span> Services that specifically meet the global needs</h2>
+                                <span class="shape-line"><i class="icon-19"></i></span>
+                            </div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#about-edu" type="button" role="tab" aria-selected="true">Our Mission</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#about-mission" type="button" role="tab" aria-selected="false">Our Vision</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#about-vision" type="button" role="tab" aria-selected="false">Our Objectives</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="about-edu" role="tabpanel">
+                                    <p>Magna aliquaenim minim veniam quis nostrud exercitation ullamco laborisLorem ipsum dolor sit amet consectetur adipisicing elit sed do eius tempor incididunt labore.</p>
+                                    <ul class="features-list">
+                                        <li>Education award achived</li>
+                                        <li>Available online courses</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="about-mission" role="tabpanel">
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+                                    <ul class="features-list">
+                                        <li>Industry Expert Instructor</li>
+                                        <li>Up-to-Date Course Content</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="about-vision" role="tabpanel">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer.</p>
+                                    <ul class="features-list">
+                                        <li>Online Remote Learning</li>
+                                        <li>Lifetime Access For Learning</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-image-gallery">
+                            <img class="main-img-1" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800" src="front/assets/images/bg/2.png" alt="About Image">
+                            <!-- <img class="main-img-2" data-sal-delay="100" data-sal="slide-left" data-sal-duration="800" src="front/assets/images/bg/1.png" alt="About Image"> -->
+                            <ul class="shape-group">
+                                <li class="shape-1 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                                    <img data-depth="2" src="front/assets/images/about/shape-13.png" alt="Shape">
+                                </li>
+                                <li class="shape-2 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                                    <img data-depth="-2" src="front/assets/images/about/shape-39.png" alt="Shape">
+                                </li>
+                                <li class="shape-3 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                                    <img data-depth="2" src="front/assets/images/about/shape-07.png" alt="Shape">
+                                </li>
+                                <li class="shape-4" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                                    <span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="shape-group">
+                <li class="shape-5">
+                    <img class="rotateit" src="front/assets/images/about/shape-13.png" alt="Shape">
+                </li>
+                <li class="shape-6">
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+        <!--=====================================-->
+        <!--=       CounterUp Area Start      	=-->
+        
+        <!--=       Course Area Start      		=-->
+        <!--=====================================-->
+        <!-- Start Course Area  -->
+        <div class="edu-course-area course-area-3 section-gap-large bg-lighten04">
+            <div class="container">
+                <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <span class="pre-title">Popular Courses</span>
+                    <h2 class="title">Academic Programs</h2>
+                    <span class="shape-line"><i class="icon-19"></i></span>
+                </div>
+                <div class="isotope-wrapper">
+                    
+                    <div class="row g-5 isotope-list">
+                        <!-- Start Single Course  -->
+                        <div class="col-md-6 col-lg-4 isotope-item undergraduate graduate">
+                            <div class="edu-course course-style-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                                <div class="inner">
+                                    <div class="thumbnail">
+                                        <a href="course-details.html">
+                                            <img src="assets/images/course/course-08.jpg" alt="Course Meta">
+                                        </a>
+                                        <div class="time-top">
+                                            <span class="duration"><i class="icon-61"></i>Online + Onsite</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <span class="course-level">Management</span>
+                                        <h5 class="title">
+                                            <a href="course-details.html">Public Administration</a>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.</p>
+                                        <div class="course-rating">
+                                            <div class="rating">
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                            </div>
+                                            <span class="rating-count">(5.0 /7 Rating)</span>
+                                        </div>
+                                        <div class="read-more-btn">
+                                            <a class="edu-btn btn-small btn-secondary" href="course-details.html">Learn More <i class="icon-4"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Course  -->
+                        <!-- Start Single Course  -->
+                        <div class="col-md-6 col-lg-4 isotope-item undergraduate graduate">
+                            <div class="edu-course course-style-3" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
+                                <div class="inner">
+                                    <div class="thumbnail">
+                                        <a href="course-details.html">
+                                            <img src="assets/images/course/course-09.jpg" alt="Course Meta">
+                                        </a>
+                                        <div class="time-top">
+                                            <span class="duration"><i class="icon-61"></i>Online + Onsite</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <span class="course-level">Economics</span>
+                                        <h5 class="title">
+                                            <a href="course-details.html">Major in Economics</a>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.</p>
+                                        <div class="course-rating">
+                                            <div class="rating">
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                            </div>
+                                            <span class="rating-count">(4.9 /5 Rating)</span>
+                                        </div>
+                                        <div class="read-more-btn">
+                                            <a class="edu-btn btn-small btn-secondary" href="course-details.html">Learn More <i class="icon-4"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Course  -->
+                        <!-- Start Single Course  -->
+                        <div class="col-md-6 col-lg-4 isotope-item undergraduate online">
+                            <div class="edu-course course-style-3" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
+                                <div class="inner">
+                                    <div class="thumbnail">
+                                        <a href="course-details.html">
+                                            <img src="assets/images/course/course-10.jpg" alt="Course Meta">
+                                        </a>
+                                        <div class="time-top">
+                                            <span class="duration"><i class="icon-61"></i>Online Only</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <span class="course-level">Business</span>
+                                        <h5 class="title">
+                                            <a href="course-details.html">Business Studies</a>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.</p>
+                                        <div class="course-rating">
+                                            <div class="rating">
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                                <i class="icon-23"></i>
+                                            </div>
+                                            <span class="rating-count">(4.7 /9 Rating)</span>
+                                        </div>
+                                        <div class="read-more-btn">
+                                            <a class="edu-btn btn-small btn-secondary" href="course-details.html">Learn More <i class="icon-4"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Course  -->
+                    </div>
+                </div>
+            </div>
+            <ul class="shape-group">
+                <li class="shape-1">
+                    <img class="d-block-shape-light" data-depth="2" src="front/assets/images/others/map-shape-3.png" alt="Shape">
+                    <img class="d-none-shape-dark" data-depth="2" src="front/assets/images/others/3-Home-1.png" alt="Shape">
+                </li>
+                <li class="shape-2">
+                    <img class="d-block-shape-light" data-depth="2" src="front/assets/images/others/map-shape-3.png" alt="Shape">
+                    <img class="d-none-shape-dark" data-depth="2" src="front/assets/images/others/dark-map-shape-3.png" alt="Shape">
+                </li>
+            </ul>
+        </div>
+        <!-- End Course Area -->
+        <!--=====================================-->
+        <!--=       	Campus Area Start      =-->
+        <!--=====================================-->
+        
+        <!-- Start Testimonial Area  -->
+        <div class="testimonial-area-2 section-gap-large">
+            <div class="container edublink-animated-shape">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <span class="pre-title">Testimonials</span>
+                            <h2 class="title">What Our Students <br> Have To Say</h2>
+                            <span class="shape-line"><i class="icon-19"></i></span>
+                            <!-- <p>Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor incidid unt labore dolore magna aliquaenim minim.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-activation swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-slide">
+                                <div class="content">
+                                    <div class="logo"><img src="assets/images/testimonial/logo-01.png" alt="Logo"></div>
+                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do umod tempor ux incididunt enim ad minim veniam quis nosrud citation laboris nisiste aliquip comodo perspiatix.</p>
+                                    <div class="rating-icon">
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                    </div>
+                                </div>
+                                <div class="author-info">
+                                    <div class="thumb">
+                                        <img src="assets/images/testimonial/testimonial-01.png" alt="Testimonial">
+                                    </div>
+                                    <div class="info">
+                                        <h5 class="title">Ray Sanchez</h5>
+                                        <span class="subtitle">Student</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-slide">
+                                <div class="content">
+                                    <div class="logo"><img src="assets/images/testimonial/logo-02.png" alt="Logo"></div>
+                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do umod tempor ux incididunt enim ad minim veniam quis nosrud citation laboris nisiste aliquip comodo perspiatix.</p>
+                                    <div class="rating-icon">
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                    </div>
+                                </div>
+                                <div class="author-info">
+                                    <div class="thumb">
+                                        <img src="assets/images/testimonial/testimonial-02.png" alt="Testimonial">
+                                    </div>
+                                    <div class="info">
+                                        <h5 class="title">Thomas Lopez</h5>
+                                        <span class="subtitle">Designer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-slide">
+                                <div class="content">
+                                    <div class="logo"><img src="assets/images/testimonial/logo-03.png" alt="Logo"></div>
+                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do umod tempor ux incididunt enim ad minim veniam quis nosrud citation laboris nisiste aliquip comodo perspiatix.</p>
+                                    <div class="rating-icon">
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                    </div>
+                                </div>
+                                <div class="author-info">
+                                    <div class="thumb">
+                                        <img src="assets/images/testimonial/testimonial-03.png" alt="Testimonial">
+                                    </div>
+                                    <div class="info">
+                                        <h5 class="title">Amber Page</h5>
+                                        <span class="subtitle">Developer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-slide">
+                                <div class="content">
+                                    <div class="logo"><img src="assets/images/testimonial/logo-02.png" alt="Logo"></div>
+                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do umod tempor ux incididunt enim ad minim veniam quis nosrud citation laboris nisiste aliquip comodo perspiatix.</p>
+                                    <div class="rating-icon">
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                    </div>
+                                </div>
+                                <div class="author-info">
+                                    <div class="thumb">
+                                        <img src="assets/images/testimonial/testimonial-04.png" alt="Testimonial">
+                                    </div>
+                                    <div class="info">
+                                        <h5 class="title">Robert Tapp</h5>
+                                        <span class="subtitle">Content Creator</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <ul class="shape-group">
+                    <li class="shape-1 scene" data-sal-delay="200" data-sal="fade" data-sal-duration="1000">
+                        <img data-depth="1.4" src="front/assets/images/about/shape-30.png" alt="Shape">
+                    </li>
+                    <li class="shape-2 scene" data-sal-delay="200" data-sal="fade" data-sal-duration="1000">
+                        <img data-depth="-1.4" src="front/assets/images/about/shape-25.png" alt="Shape">
+                    </li>
+                </ul>
+            </div>
+            <ul class="shape-group">
+                <li class="shape-3" data-sal-delay="200" data-sal="fade" data-sal-duration="1000">
+                    <img class="d-block-shape-light" data-depth="2" src="front/assets/images/others/map-shape-3.png" alt="Shape">
+                    <img class="d-none-shape-dark" data-depth="2" src="front/assets/images/others/dark-map-2-shape-3.png" alt="Shape">
+                </li>
+            </ul>
+        </div>
+        <!-- End Testimonial Area  -->
+        <!--=====================================-->
+        <!--=       Video Area Start      		=-->
+        <!--=====================================-->
+        <!-- <div class="video-area-2 bg-image--14 bg-image">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="video-banner-content">
+                            <div class="video-btn">
+                                <a href="https://www.youtube.com/watch?v=PICj5tr9hcc" class="video-play-btn video-popup-activation">
+                                    <i class="icon-18"></i>
+                                </a>
+                            </div>
+                            <h2 class="title">Take a Video Tour to Learn Intro of Campus</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!--=====================================-->
+        <!--=       	CTA Area Start      	=-->
+        <!--=====================================-->
+        <!-- Start CTA Area  -->
+       
+      
+        <!-- Start Event Area  -->
+        <div class="edu-event-area event-area-1 gap-large-text">
+            <div class="container edublink-animated-shape">
+                <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <span class="pre-title">Events & News</span>
+                    <h2 class="title">Popular Events & News</h2>
+                    <span class="shape-line"><i class="icon-19"></i></span>
+                </div>
+                <div class="row g-5">
+                    <!-- Start Event Grid  -->
+                    <div class="col-lg-4 col-md-6" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                        <div class="edu-event event-style-1">
+                            <div class="inner">
+                                <div class="thumbnail">
+                                    <a href="event-details.html">
+                                        <img src="assets/images/event/event-01.jpg" alt="Blog Images">
+                                    </a>
+                                    <div class="event-time">
+                                        <span><i class="icon-33"></i>08:00AM-10:00PM</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="event-date">
+                                        <span class="day">30</span>
+                                        <span class="month">SEP</span>
+                                    </div>
+                                    <h5 class="title"><a href="event-details.html">Learn English in Ease</a></h5>
+                                    <p>Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.</p>
+                                    <ul class="event-meta">
+                                        <li><i class="icon-40"></i>Newyork City, USA</li>
+                                    </ul>
+                                    <div class="read-more-btn">
+                                        <a class="edu-btn btn-small btn-secondary" href="event-details.html">Learn More <i class="icon-4"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Event Grid  -->
+                    <!-- Start Event Grid  -->
+                    <div class="col-lg-4 col-md-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
+                        <div class="edu-event event-style-1">
+                            <div class="inner">
+                                <div class="thumbnail">
+                                    <a href="event-details.html">
+                                        <img src="assets/images/event/event-02.jpg" alt="Blog Images">
+                                    </a>
+                                    <div class="event-time">
+                                        <span><i class="icon-33"></i>04:00PM-07:00PM</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="event-date">
+                                        <span class="day">25</span>
+                                        <span class="month">DEC</span>
+                                    </div>
+                                    <h5 class="title"><a href="event-details.html">Annual Workshop</a></h5>
+                                    <p>Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.</p>
+                                    <ul class="event-meta">
+                                        <li><i class="icon-40"></i>Washington D.C, USA</li>
+                                    </ul>
+                                    <div class="read-more-btn">
+                                        <a class="edu-btn btn-small btn-secondary" href="event-details.html">Learn More <i class="icon-4"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Event Grid  -->
+                    <!-- Start Event Grid  -->
+                    <div class="col-lg-4 col-md-6" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
+                        <div class="edu-event event-style-1">
+                            <div class="inner">
+                                <div class="thumbnail">
+                                    <a href="event-details.html">
+                                        <img src="assets/images/event/event-03.jpg" alt="Blog Images">
+                                    </a>
+                                    <div class="event-time">
+                                        <span><i class="icon-33"></i>10:00AM-11:00AM</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="event-date">
+                                        <span class="day">15</span>
+                                        <span class="month">NOV</span>
+                                    </div>
+                                    <h5 class="title"><a href="event-details.html">Design Think & Innovation</a></h5>
+                                    <p>Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.</p>
+                                    <ul class="event-meta">
+                                        <li><i class="icon-40"></i>Newyork City, USA</li>
+                                    </ul>
+                                    <div class="read-more-btn">
+                                        <a class="edu-btn btn-small btn-secondary" href="event-details.html">Learn More <i class="icon-4"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Event Grid  -->
+                </div>
+                <div class="event-view-all-btn" data-sal-delay="150" data-sal="slide-up" data-sal-duration="1200">
+                    <h6 class="view-text">The Latest Events from Priscor Academy. <a href="event-grid.html" class="btn-transparent">View All <i class="icon-4"></i></a></h6>
+                </div>
+
+                <ul class="shape-group">
+                    <li class="shape-1" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                        <img class="rotateit" src="front/assets/images/about/shape-13.png" alt="Shape">
+                    </li>
+                    <li class="shape-2 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                        <span data-depth=".9"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Event Area  -->
+        
+        <!--=====================================-->
+        <!-- Start Ad Banner Area  -->
+        <div class="university-cta-wrapper edu-cta-banner-area bg-image">
+            <div class="container">
+                <div class="edu-cta-banner">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                                <h2 class="title">Get Your Quality Skills <span class="color-primary">Certificate</span> Through Priscor Academy</h2>
+                                <a href="{{ url('courses') }}" class="edu-btn btn-secondary">Get started now <i class="icon-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="shape-group">
+                        <li class="shape-01 scene">
+                            <img data-depth="2.5" src="front/assets/images/cta/shape-10.png" alt="shape">
+                        </li>
+                        <li class="shape-02 scene">
+                            <img data-depth="-2.5" src="front/assets/images/cta/shape-09.png" alt="shape">
+                        </li>
+                        <li class="shape-03 scene">
+                            <img data-depth="-2" src="front/assets/images/cta/shape-08.png" alt="shape">
+                        </li>
+                        <li class="shape-04 scene">
+                            <img data-depth="2" src="front/assets/images/about/shape-13.png" alt="shape">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Ad Banner Area  -->
+        <!--=====================================-->
+        <!--=        Footer Area Start       	=-->
+        <!--=====================================-->
+        @include('pages.footer')
